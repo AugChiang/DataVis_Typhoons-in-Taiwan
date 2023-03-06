@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Defines metadata about an HTML document-->
+    <!--Specifies the character encoding-->
+    <meta charset="utf-8">
+    <!--Specifies the name of the element-->
+    <meta name="desciption" content="">
+
+    <title>
+        Data-Vis Final Project 61047061S
+    </title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  
+  <body>
+    <div class="header">
+      <div class="reset-block">
+            <span class="title">About the project</span>
+            <div class="reset">
+              <button class="reset-button" onclick="ResetMap()"> Reset Map</button>
+              <button class="reset-button" onclick="ResetPlots()"> Reset Plot</button>
+            </div>      
+          </div>
+
+          <div class="intro">
+            <p>
+              This is the Final Project of NTNU-Data Visualization Course&#46;
+              <br>
+              The dataset is from
+              <a href="https://rdc28.cwb.gov.tw/" target="_blank">
+                <strong>
+                  Taiwan Central Weather Bureau and Taiwan Adaptation Platform (TCCIP)&#46;
+                </strong>        
+              </a>
+              <br>
+              Contains about 400 samples from 1960 to 2021&#46;
+            </p>
+          </div>
+          <div class="intro plot">
+            <p>
+              This section is the barchart zones with brush filters&#46; 
+              You can check the details of typhoons here&#46; <br>
+              The above one is the <strong> total precipitation over years&#46; </strong> <br>
+              The below one is the <strong> number of typhoons by year&#46; </strong> 
+            </p>
+          </div>
+    </div>
+    
+
+    <!-- Taiwan Map -->
+    <div class="map">
+      <div>
+        <div>
+          <div class="typath-p"> Typhoon Paths View in East Asia</div>
+          <span class="switch-text"> FOCUS MODE</span>
+          <!-- Rounded switch -->
+          <div class="switch">
+            <label>
+              <input type="checkbox" id="focus-mode" onclick="UpdateMap()">
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- select year (dropdown list) -->
+        <div class="yr-select">
+          <label> Filter by Year
+            <input id="year-input-start" type="text" oninput="ChkTyyear()"
+                   list="tyyear" name="tyyear" placeholder="Start..." 
+                   style="margin-left: px; width: 60px;">
+            <input id="year-input-end" type="text" oninput="ChkTyyear()"
+                   list="tyyear" name="tyyear" placeholder="End..." 
+                   style="margin-left: 2px; width: 60px;">
+          </label>
+          <datalist id="tyyear"></datalist>
+        </div>
+
+        <!-- search-dropdown list of typhoon name -->
+        <div class="tyname-search">
+          <label> Search by Name
+            <input id="name-input" type="text" oninput="ChkTyname()"
+                   list="typhnames" name="typhnames" placeholder="Enter..."
+                   style="width: 80px; margin-bottom: 4px">
+          </label>
+          <datalist id="typhnames"></datalist>
+        </div>
+      </div>
+      <!-- Typhoon paths -->
+    </div>
+
+    <!-- The accumulative precipitation that typhoon(s) brings -->
+    <div class="rain">
+      <!-- Accumulative rain in hours -->
+      <div class="histo">
+      </div>
+      <!-- Accumulative rain in hours -->
+      <div class="filterplot">
+        <div class="name-detail"></div>        
+        <div class="table"></div>
+        <div class="filterbar"></div>
+      </div>
+    </div>
+
+
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="d3-tip.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
