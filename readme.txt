@@ -1,5 +1,6 @@
 ********************* Instruction *************************
 This is the final project of Data Visualization Course.
+I am using TCCIP typhoon dataset as example.
 
 *** How to run the code? ***
 Open "index.html" file and run it with the Live Server extension in VSCode.
