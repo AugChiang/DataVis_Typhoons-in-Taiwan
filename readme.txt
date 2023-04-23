@@ -15,6 +15,4 @@ Make sure the json and csv files are in the "data" folder, or you can modify it 
 *** Short Clip of Introduction ***.
 File: Intro_61047061S.mkv
 If there is any problem with the video,
-please check the url:
-
-	https://drive.google.com/file/d/1tExORXDrcDSXzF2R9g45Ok149hXEAqUG/view?usp=sharing
+please check the url:    https://youtu.be/tOlK6BNY6R4
